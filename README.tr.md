@@ -22,7 +22,7 @@ API anahtarı, internet bağlantısı ya da hesap gerekmez. Her şey kural taban
 
 ![Öncelik listesi (Türkçe)](docs/turkish.png)
 
-![Oyuncu planları](docs/players.png)
+![Oyuncu planları](docs/turkish-players.png)
 
 ## Kurulum
 
@@ -79,7 +79,9 @@ Asistan, FMSuperScout'un kendi **"CA/PA ve gizli değerleri gizle"** ayarına uy
 
 FM26 rol listesi oyundakiyle aynıdır. Rol başına kilit ve tercih edilen özellikler, yıldız formülü ve tüm eşikler topluluk bilgisine dayanan **tahminlerdir**, Sports Interactive'in gizli formülleri değildir. Oyundaki yıldızlar ya da rol uygunluğu farklı çıkarsa ekran görüntüsüyle bir issue açabilirsin.
 
-**Bilinen sınır:** FMSuperScout kaleci antrenörü özelliklerini bellekten tam okuyamıyor. Bu yüzden kaleci satırı *tahmini* olarak işaretli.
+**Bilinen sınırlar:**
+- FMSuperScout kaleci antrenörü özelliklerini bellekten tam okuyamıyor. Bu yüzden kaleci satırı *tahmini* olarak işaretli.
+- Türkçe rol adları oyunun Türkçe karşılıklarına en yakın adlardır; oyundakiyle eşleştirebilmen için yanlarında İngilizce adları da gösterilir. Oyundaki adla farklı olan bir rol görürsen `src/i18n.js` içindeki `role` listesinden düzeltebilir ya da issue açabilirsin.
 
 ## Geliştirme
 

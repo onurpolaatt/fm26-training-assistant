@@ -22,6 +22,9 @@ const traitName = t => {
   const l = L();
   return l.traitTr && l.traitTr[t.n] ? `${esc(l.traitTr[t.n])} <span class="as-m">(${esc(t.n)})</span>` : esc(t.n);
 };
+const rName = r => roleName(r, L());
+// Role name with the English game name next to it when a translation is shown
+const rFull = r => { const n = rName(r); return n === r.name ? esc(n) : `${esc(n)} <span class="as-m">(${esc(r.name)})</span>`; };
 const starHtml = n => {
   const full = Math.floor(n), half = n - full >= 0.5;
   return `<span class="as-stars">${'★'.repeat(full)}${half ? '½' : ''}<span class="as-off">${'★'.repeat(5 - full - (half ? 1 : 0))}</span></span> <span class="as-m">${n.toFixed(1)}</span>`;
@@ -97,7 +100,7 @@ function roleSelect(p, phase, cur, best) {
   if (!list.length) list = ROLES.filter(r => r.phase === phase);
   const id = `as_${phase}_${p.id}`;
   return `<div class="as-f"><label for="${id}">${phase === 'IP' ? U.ip : U.oop}</label>
-    <select id="${id}" data-pid="${p.id}" data-phase="${phase}">${list.map(r => `<option value="${r.id}"${r.id === cur.id ? ' selected' : ''}>${esc(r.name)}${r.id === best.id ? ' ★' : ''}</option>`).join('')}</select></div>`;
+    <select id="${id}" data-pid="${p.id}" data-phase="${phase}">${list.map(r => `<option value="${r.id}"${r.id === cur.id ? ' selected' : ''} title="${esc(r.name)}">${esc(rName(r))}${r.id === best.id ? ' ★' : ''}</option>`).join('')}</select></div>`;
 }
 
 function card(x, useHidden) {
@@ -114,7 +117,7 @@ function card(x, useHidden) {
     <div class="as-roles">${roleSelect(p, 'IP', x.ipR, x.bestIp.r)}${roleSelect(p, 'OOP', x.oopR, x.bestOop.r)}</div>
     <div class="as-fit">${esc(U.fit(x.fitIp.toFixed(1), x.fitOop.toFixed(1)))}</div>
     <div class="as-plan">
-      <div class="as-row"><span class="k">${esc(U.roleTr)}</span><span>${esc(x.ipR.name)} + ${esc(x.oopR.name)}</span></div>
+      <div class="as-row"><span class="k">${esc(U.roleTr)}</span><span>${rFull(x.ipR)}<br>${rFull(x.oopR)}</span></div>
       <div class="as-row"><span class="k">${esc(U.focus)}</span><span>${focus}</span></div>
       <div class="as-row"><span class="k">${esc(U.intensity)}</span><span>${esc(x.intensity.v)}<span class="why">${esc(x.intensity.why)}.</span></span></div>
       <div class="as-row"><span class="k">${esc(U.trait)}</span><span>${trait}</span></div>
@@ -134,7 +137,7 @@ function render() {
   const present = GROUP_ORDER.filter(g => R.players.some(x => x.group === g));
   const tSel = (g, phase) => {
     const id = `ast_${phase}_${g}`, cur = (S.tactic[g] || {})[phase === 'IP' ? 'ip' : 'oop'] || '';
-    return `<div class="as-f"><label for="${id}">${phase === 'IP' ? U.ip : U.oop}</label><select id="${id}" data-g="${g}" data-phase="${phase}"><option value="">${esc(U.auto)}</option>${ROLES.filter(r => r.phase === phase && r.groups.includes(g)).map(r => `<option value="${r.id}"${r.id === cur ? ' selected' : ''}>${esc(r.name)}</option>`).join('')}</select></div>`;
+    return `<div class="as-f"><label for="${id}">${phase === 'IP' ? U.ip : U.oop}</label><select id="${id}" data-g="${g}" data-phase="${phase}"><option value="">${esc(U.auto)}</option>${ROLES.filter(r => r.phase === phase && r.groups.includes(g)).map(r => `<option value="${r.id}"${r.id === cur ? ' selected' : ''} title="${esc(r.name)}">${esc(rName(r))}</option>`).join('')}</select></div>`;
   };
   const sorted = R.players.slice().sort((a, b) => GROUP_ORDER.indexOf(a.group) - GROUP_ORDER.indexOf(b.group) || (useHidden ? b.p.ca - a.p.ca : b.fitIp - a.fitIp));
   let cards = '', cur = null, buf = [];

@@ -93,6 +93,7 @@ const ROLES = [
   R('tcf','OOP','Tracking Centre Forward',['ST'],['WorkRate','Stamina','Teamwork','Aggression','Tackling'],['Bravery']),
 ];
 const ROLE = Object.fromEntries(ROLES.map(r => [r.id, r]));
+const roleName = (r, L) => (L && L.role && L.role[r.id]) || r.name;
 
 // Player traits: suggested when the role matches and attribute thresholds are met
 const TRAITS = [
@@ -278,9 +279,9 @@ function analyse(data, opts) {
     if (p.age <= 20 && !x.starter && (!useHidden || p.pa - p.ca >= 25))
       x.flags.push({ t:'loan', s: T.fLoan, d: T.fLoanD(L.depth[x.depthGroup] || x.depthGroup, x.depthRank) });
     if (x.fitIp + 1.2 < x.bestIp.fit && x.bestIp.r.id !== x.ipR.id)
-      x.flags.push({ t:'info', s: T.fFit, d: T.fFitD(x.bestIp.r.name, x.bestIp.fit.toFixed(1), x.fitIp.toFixed(1)) });
+      x.flags.push({ t:'info', s: T.fFit, d: T.fFitD(roleName(x.bestIp.r, L), x.bestIp.fit.toFixed(1), x.fitIp.toFixed(1)) });
     if (x.fitOop + 1.2 < x.bestOop.fit && x.bestOop.r.id !== x.oopR.id)
-      x.flags.push({ t:'info', s: T.fFitO, d: T.fFitOD(x.oopR.name, x.fitOop.toFixed(1), x.bestOop.r.name, x.bestOop.fit.toFixed(1)) });
+      x.flags.push({ t:'info', s: T.fFitO, d: T.fFitOD(roleName(x.oopR, L), x.fitOop.toFixed(1), roleName(x.bestOop.r, L), x.bestOop.fit.toFixed(1)) });
   }
   const mentoring = mentorPlan(res, useHidden, L);
   const staff = staffPlan(data.staff || []);
@@ -335,4 +336,4 @@ function mentorPlan(res, useHidden, L) {
   return { groups, bad: [...badSet], needVeteran: strong.length === 0, left };
 }
 
-if (typeof module !== 'undefined') module.exports = { analyse, groupsOf, ROLES, ROLE, CATS, TRAITS, coachValue, stars };
+if (typeof module !== 'undefined') module.exports = { analyse, groupsOf, roleName, ROLES, ROLE, CATS, TRAITS, coachValue, stars };

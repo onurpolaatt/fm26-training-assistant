@@ -79,7 +79,9 @@ The assistant follows FMSuperScout's own **"hide CA/PA and hidden stats"** setti
 
 The FM26 role list follows the game. The key and preferred attributes per role, the star formula and all thresholds are **estimates** based on community knowledge, not Sports Interactive's hidden formulas. If your in-game stars or role suitability disagree, please open an issue with a screenshot.
 
-**Known limitation:** FMSuperScout cannot fully read goalkeeping-coach attributes from memory, so the goalkeeping row is marked *estimated*.
+**Known limitations:**
+- FMSuperScout cannot fully read goalkeeping-coach attributes from memory, so the goalkeeping row is marked *estimated*.
+- Turkish role names are the closest equivalents to the game's Turkish translation. The English name is shown next to them so players can match the game. If one differs from your game, fix it in the `role` list in `src/i18n.js` or open an issue.
 
 ## Development
 

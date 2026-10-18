@@ -72,4 +72,5 @@ test('both languages define the same keys', () => {
   for (const k of ['attr', 'group', 'depth', 'cat', 'infl', 'intensity', 't', 'ui']) assert.equal(keys(tr[k]), keys(en[k]), k);
   assert.equal(tr.fac.length, en.fac.length);
   for (const t of E.TRAITS) assert.ok(tr.traitTr[t.n], 'Turkish trait name for ' + t.n);
+  for (const r of E.ROLES) assert.ok(tr.role[r.id], 'Turkish role name for ' + r.id);
 });
