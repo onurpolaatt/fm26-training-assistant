@@ -1,0 +1,5 @@
+dist/
+out/
+*.zip
+install-log.txt
+node_modules/

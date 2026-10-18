@@ -1,0 +1,26 @@
+# Push a tag like v1.0.1 -> tests, build, zip, GitHub release with the zip attached.
+name: release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - run: node build.js
+      - name: Zip
+        run: |
+          mkdir -p out/FM26-Training-Assistant
+          cp dist/assistant.js installer/install.ps1 installer/Install.cmd installer/Uninstall.cmd installer/INSTALL.txt out/FM26-Training-Assistant/
+          cd out && zip -r ../FM26-Training-Assistant.zip FM26-Training-Assistant
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" FM26-Training-Assistant.zip --title "$GITHUB_REF_NAME" --generate-notes

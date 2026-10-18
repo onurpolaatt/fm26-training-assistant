@@ -1,0 +1,29 @@
+FM26 Training Assistant for FMSuperScout
+========================================
+
+ENGLISH
+1. Install FMSuperScout first (FMSuperScout-Setup.exe).
+2. Extract this whole zip into one folder (do not run it from inside the zip).
+3. Double-click Install.cmd and answer "Yes" to the administrator prompt.
+4. Restart FMSuperScout. An "Assistant" tab appears in the top bar.
+If something fails, send the contents of install-log.txt.
+Uninstall: double-click Uninstall.cmd.
+If FMSuperScout updates itself and the tab disappears, run Install.cmd again.
+
+Manual install: copy assistant.js to C:\Program Files\FMSuperScout\app and add
+    <script src="assistant.js"></script>
+right below <script src="app.js"></script> in index.html (edit as administrator).
+
+TÜRKÇE
+1. Önce FMSuperScout'u kur (FMSuperScout-Setup.exe).
+2. Zip'in tamamını bir klasöre çıkar (zip'in içinden çalıştırma).
+3. Install.cmd dosyasına çift tıkla, yönetici izni penceresine "Evet" de.
+4. FMSuperScout'u yeniden aç. Üst menüde "Asistan" sekmesi çıkar.
+Hata olursa install-log.txt içeriğini gönder.
+Kaldırma: Uninstall.cmd dosyasına çift tıkla.
+FMSuperScout kendini güncellerse ve sekme kaybolursa Install.cmd'yi tekrar çalıştır.
+
+Elle kurulum: assistant.js'i C:\Program Files\FMSuperScout\app klasörüne kopyala ve
+index.html'de <script src="app.js"></script> satırının altına
+    <script src="assistant.js"></script>
+ekle (Not Defteri'ni yönetici olarak aç).
