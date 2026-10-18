@@ -23,4 +23,10 @@ jobs:
       - name: Release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" FM26-Training-Assistant.zip --title "$GITHUB_REF_NAME" --generate-notes
+        # Upload to the release if one already exists for this tag (e.g. created by hand), otherwise create it
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" FM26-Training-Assistant.zip --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" FM26-Training-Assistant.zip --title "$GITHUB_REF_NAME" --generate-notes
+          fi

@@ -1,6 +1,6 @@
 {
   "name": "fm26-training-assistant",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rule-based training, mentoring and staff advice for Football Manager 26, as a tab inside FMSuperScout.",
   "repository": "onurpolaatt/fm26-training-assistant",
   "license": "MIT",

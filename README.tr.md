@@ -28,7 +28,7 @@ API anahtarı, internet bağlantısı ya da hesap gerekmez. Her şey kural taban
 
 1. Önce [FMSuperScout](https://github.com/mavarobli/FMSuperScout/releases/latest)'u kur ve çalıştığından emin ol (oyunda F9 oyuncuları yükleyebilmeli).
 2. [Son sürümden](../../releases/latest) `FM26-Training-Assistant.zip` dosyasını indir.
-3. Zip'in **tamamını** bir klasöre çıkar. Dosyaları zip'in içinden çalıştırma.
+3. Zip'e sağ tıkla ve **Tümünü ayıkla** de. Dosyaları zip'in içinden çalıştırma; çalıştırırsan `Install.cmd` bir uyarıyla durur.
 4. **`Install.cmd`** dosyasına çift tıkla, yönetici izni penceresine **Evet** de. FMSuperScout Program Files altında olduğu için oraya yazmak yönetici izni ister.
 5. FMSuperScout'u yeniden aç. "Analyse"in yanında **Asistan** sekmesi çıkar.
 

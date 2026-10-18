@@ -28,7 +28,7 @@ No API key, no internet connection and no account. Everything is rule based and 
 
 1. Install [FMSuperScout](https://github.com/mavarobli/FMSuperScout/releases/latest) first and check that it works (F9 in game loads your players).
 2. Download `FM26-Training-Assistant.zip` from the [latest release](../../releases/latest).
-3. Extract the **whole** zip into one folder. Do not run the files from inside the zip.
+3. Right-click the zip and choose **Extract All**. Do not run the files from inside the zip; `Install.cmd` stops with a message if you do.
 4. Double-click **`Install.cmd`** and answer **Yes** to the administrator prompt. FMSuperScout lives in Program Files, so writing there needs admin rights.
 5. Restart FMSuperScout. An **Assistant** tab appears next to "Analyse".
 
