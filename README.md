@@ -81,7 +81,7 @@ The FM26 role list follows the game. The key and preferred attributes per role, 
 
 **Known limitations:**
 - FMSuperScout cannot fully read goalkeeping-coach attributes from memory, so the goalkeeping row is marked *estimated*.
-- Turkish role names are the closest equivalents to the game's Turkish translation. The English name is shown next to them so players can match the game. If one differs from your game, fix it in the `role` list in `src/i18n.js` or open an issue.
+- Turkish role names are taken from the game's Turkish tactics screen, with the English name shown next to them. If a patch renames one, fix it in the `role` list in `src/i18n.js` or open an issue.
 
 ## Development
 

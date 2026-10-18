@@ -21,9 +21,11 @@ const ROLES = [
   R('bpcb','IP','Ball-Playing Centre-Back',['DC'],['Passing','Composure','Vision','FirstTouch','Technique','Decisions'],['Positioning','Heading']),
   R('nncb','IP','No-Nonsense Centre-Back',['DC'],['Heading','JumpingReach','Strength','Bravery','Positioning'],['Marking','Tackling','Concentration']),
   R('acb','IP','Advanced Centre-Back',['DC'],['Passing','Dribbling','FirstTouch','Composure','Vision','Decisions'],['Technique','Stamina','Acceleration']),
+  R('wcb','IP','Wide Centre-Back',['DC'],['Marking','Tackling','Positioning','Dribbling','Crossing','Pace'],['Stamina','Passing']),
   R('ocb','IP','Overlapping Centre-Back',['DC'],['Dribbling','Crossing','Stamina','Pace','Acceleration','OffTheBall'],['Passing','WorkRate']),
   R('cb_o','OOP','Centre-Back',['DC'],['Marking','Tackling','Positioning','Heading','JumpingReach','Concentration'],['Anticipation','Strength']),
   R('ccb','OOP','Covering Centre-Back',['DC'],['Positioning','Anticipation','Pace','Acceleration','Concentration','Decisions'],['Marking','Tackling']),
+  R('wcb_o','OOP','Wide Centre-Back',['DC'],['Marking','Tackling','Positioning','Pace','Concentration'],['Acceleration','Stamina']),
   R('scb','OOP','Stopping Centre-Back',['DC'],['Tackling','Aggression','Bravery','Strength','Anticipation','Marking'],['Decisions','Acceleration']),
   // Full-back / wing-back
   R('fb','IP','Full Back',['DW'],['Marking','Tackling','Positioning','Crossing','Stamina','WorkRate'],['Teamwork','Pace','Passing']),
@@ -46,6 +48,7 @@ const ROLES = [
   R('b2bp','IP','Box-To-Box Playmaker',['DM'],['Passing','Vision','Stamina','WorkRate','Technique','OffTheBall'],['Decisions','FirstTouch']),
   R('dm_o','OOP','Defensive Midfielder',['DM'],['Tackling','Marking','Positioning','Anticipation','Concentration'],['Teamwork','WorkRate']),
   R('ddm','OOP','Dropping Defensive Midfielder',['DM'],['Positioning','Marking','Heading','JumpingReach','Concentration'],['Strength','Tackling']),
+  R('pdm','OOP','Pressing Defensive Midfielder',['DM'],['Tackling','WorkRate','Stamina','Aggression','Acceleration','Anticipation'],['Teamwork','Bravery']),
   R('sdm','OOP','Screening Defensive Midfielder',['DM'],['Positioning','Anticipation','Concentration','Decisions','Teamwork'],['Marking','Tackling']),
   R('wcdm','OOP','Wide Covering Defensive Midfielder',['DM'],['Stamina','WorkRate','Pace','Tackling','Positioning'],['Anticipation','Teamwork']),
   // Central midfield

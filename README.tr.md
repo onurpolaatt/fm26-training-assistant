@@ -81,7 +81,7 @@ FM26 rol listesi oyundakiyle aynıdır. Rol başına kilit ve tercih edilen öze
 
 **Bilinen sınırlar:**
 - FMSuperScout kaleci antrenörü özelliklerini bellekten tam okuyamıyor. Bu yüzden kaleci satırı *tahmini* olarak işaretli.
-- Türkçe rol adları oyunun Türkçe karşılıklarına en yakın adlardır; oyundakiyle eşleştirebilmen için yanlarında İngilizce adları da gösterilir. Oyundaki adla farklı olan bir rol görürsen `src/i18n.js` içindeki `role` listesinden düzeltebilir ya da issue açabilirsin.
+- Türkçe rol adları oyunun FM26 taktik ekranındaki Türkçe adlarıdır; yanlarında İngilizce adları da gösterilir. Bir FM yamasında değişen bir ad görürsen `src/i18n.js` içindeki `role` listesinden düzeltebilir ya da issue açabilirsin.
 
 ## Geliştirme
 
